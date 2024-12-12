@@ -33,18 +33,22 @@ public:
 class Solution {
   public:
     double switchCase(int choice, vector<double> &arr) {
-        // Switch case for handling different choices
-        switch (choice) {
-            case 1: // Area of a circle
-                if (arr.size() != 1) return -1; // Validate array size
-                return M_PI * arr[0] * arr[0];
-
-            case 2: // Area of a rectangle
-                if (arr.size() != 2) return -1; // Validate array size
-                return arr[0] * arr[1];
-
-            default: // Handle invalid choice
-                return -1; // Return -1 for invalid choice
+        // code here
+        switch(choice)
+        {
+            case 1:
+            {
+                return M_PI*arr[0]*arr[0];
+                break;
+            }
+            case 2:
+            {
+                return arr[0]*arr[1];
+                break;
+            }
+            default:
+            return -1;
+            
         }
     }
 };

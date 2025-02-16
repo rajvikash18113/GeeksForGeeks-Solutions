@@ -13,12 +13,14 @@ class Solution {
         int maxi = 0, choice = 0, jump = 0;
         for(int  i = 0; i < n; i++)
         {
+            // arr[i] + 1 will give us th evalue that till how much index we will jump from here
             maxi = max(maxi, arr[i] + i);
             if(i == choice)
             {
                 choice = maxi;
                 jump++;
             }
+            // if we reached the last element of array or goes out from the last element then return jump
             if(choice >= n - 1)
             return jump;
         }

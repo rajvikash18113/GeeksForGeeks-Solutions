@@ -2,28 +2,54 @@ class Solution {
   public:
     // a,b : the arrays
     // Function to return a list containing the union of the two arrays.
-    
     vector<int> findUnion(vector<int> &a, vector<int> &b) {
-        // ------------------ 2nd Approach----------------------------//
+        // Your code here
+        //---------------3rd Approach - Optimal -------------- //
+        int n = a.size();
+        int m = b.size();
+        int i = 0;
+        int j = 0;
         vector<int> unionArr;
-        map<int, int> mpp;
-        
-        for(int i = 0; i < a.size(); i++)
+        while(i < n && j < m)
         {
-            mpp[a[i]]++;
+            if(a[i] <= b[j])
+            {
+                if(unionArr.size() == 0 || unionArr.back() != a[i])
+                {
+                    unionArr.push_back(a[i]);
+                }
+                i++;
+            }
+            else
+            {
+                if(unionArr.size() == 0 || unionArr.back() != b[j])
+                {
+                    unionArr.push_back(b[j]);
+                }
+                j++;
+            }
         }
         
-        for(int i = 0; i < b.size(); i++)
+        while(i < n)
         {
-            mpp[b[i]]++;
+            if(unionArr.back() != a[i])
+            {
+                unionArr.push_back(a[i]);
+            }
+            i++;
         }
         
-        for(auto i : mpp)
+        while(j < m)
         {
-            unionArr.push_back(i.first);
+            if(unionArr.back() != b[j])
+            {
+                unionArr.push_back(b[j]);
+            }
+            j++;
         }
         
         return unionArr;
+        
         // return vector with correct order of elements
     }
 };

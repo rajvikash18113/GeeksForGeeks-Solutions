@@ -3,7 +3,7 @@ class Solution {
     // Function to return a list containing the intersection of two arrays.
     vector<int> intersection(vector<int> &arr1, vector<int> &arr2) {
         // Your code here
-        //----------------Optimal Approach -------------------//
+        //----------------- Optimal Approach -------------------//
         int i = 0, j = 0;
         int n = arr1.size();
         int m = arr2.size();
